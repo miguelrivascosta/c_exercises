@@ -105,6 +105,6 @@ double addition(double n1, double n2, double n3, double n4) {
 }
 
 double addition(double n1, double n2, double n3, double n4, double n5) {
-    cout<<n1<<" + "<<n2<<" + "<<n3<<" + "<<n4<<" + "<<n5<<" = "<<(n1+n2+n3+n4)<<endl;
+    cout<<n1<<" + "<<n2<<" + "<<n3<<" + "<<n4<<" + "<<n5<<" = "<<(n1+n2+n3+n4+n5)<<endl;
     return n1+n2+n3+n4+n5;
 }

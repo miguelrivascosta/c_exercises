@@ -24,7 +24,7 @@ void printArrayValues(int *, int);
 
 int main() {
     int array[] = {3, 1, 2, 0, 9};
-    bubbleSort(array,5,true);
+    bubbleSort(array,5,false);
     printArrayValues(array,5);
     return 0;
 }
@@ -41,21 +41,24 @@ void bubbleSort(int * array, int size, bool mode){
     if(mode)
     {
         cout<<"Ascending order"<<endl;
-        for (int i = 1; i < size; i++)
-        {
-            cout<<array[i-1]<<endl;
-            if(array[i-1]>array[i]){
-                swapTwoValues(&array[i-1],&array[i]);
-                for (int j = 0; j < size; j++)
-                {
-                    cout<<*(array+j);
+        for (int i = size; i > 0; i--){
+            for (int j = 1; j < i; j++)
+            {
+                if(array[j-1]>array[j]){
+                    swapTwoValues(&array[j-1],&array[j]);
                 }
-                cout<<endl;
             }
         }
-        
     }else{
         cout<<"Descending order"<<endl;
+        for (int i = size; i > 0; i--){
+            for (int j = 1; j < i; j++)
+            {
+                if(array[j-1]<array[j]){
+                    swapTwoValues(&array[j-1],&array[j]);
+                }
+            }
+        }
     }
 }
 
@@ -64,6 +67,4 @@ void printArrayValues(int * array, int size){
     {
         cout<<*(array+i)<<endl;
     }
-    
-
 }
